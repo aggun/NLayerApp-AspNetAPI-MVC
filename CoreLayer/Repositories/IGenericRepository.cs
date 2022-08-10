@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 
 namespace CoreLayer.Repositories
 {
-    internal interface IGenericRepository
+    public interface IGenericRepository <T> where T : class
     {
+
+        Task <T> GetByIdAsync (int id);
+        IQueryable<T> GetAll();
+        IQueryable<T> where(Expression<Func<T, bool>> expression);
+        Task <bool>AnyAsync(Expression<Func<T, bool>> expression);
+        Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
+        void Update(T entity);
+        void Remove(T entity);
+        void RemoveRange(IEnumerable<T> entities);
+
     }
 }

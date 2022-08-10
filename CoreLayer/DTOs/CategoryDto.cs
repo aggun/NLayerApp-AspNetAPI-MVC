@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreLayer.UnitOfWork
+namespace CoreLayer.DTOs
 {
-    public interface IUnitOfWork
+    public class CategoryDto : BaseDto
     {
-        Task CommitAsync();
-        void Commit();
+        public string Name { get; set; }
     }
 }

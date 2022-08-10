@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreLayer.Models
+namespace CoreLayer.DTOs
 {
-    public class ProductFeature
+    public class ProductFeatureDto
     {
         public int Id { get; set; }
         public string Color { get; set; }
@@ -14,7 +14,5 @@ namespace CoreLayer.Models
         public int Width { get; set; }
 
         public int ProductId { get; set; }
-
-        public Product Product { get; set; }
     }
 }
