@@ -2,12 +2,8 @@
 using CoreLayer.Services;
 using CoreLayer.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using ServiceLayer.Exceptions;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServiceLayer.Services
 {
@@ -50,7 +46,7 @@ namespace ServiceLayer.Services
 
             if (hasProduct == null)
             {
-             //   throw new NotFoundExcepiton($"{typeof(T).Name}({id}) not found");
+                throw new NotFoundExcepiton($"{typeof(T).Name}({id}) not found");
             }
             return hasProduct;
         }
